@@ -6,13 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css" /> 
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>JavaScript Code Quiz</title>
+    <title>Code Quiz Homepage</title>
 </head>
 
 <body>
-    <div>
-        <h1>View High Scores</h1>
-        <h1>Time: </h1>
+    <header>
+        <div>
+            <a href="./pages/highscores.html" class="highScores">View High Scores</a>
+            <p class="time" id="timecount" >Time: <span class="time" id="timer">0</span></p>
+        </div>
+    </header>
+
+    <div id="home-box" class="home-box">
+        <div id="home" class="flex-column flex-center">
+            <h1>Code Quiz</h1>
+            <div>
+                <p class="info" id="info">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your time by 15 seconds.</p>
+                <button class="btn-startQ" id="btn-begin">Start Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <div id = "quiz-box" class="quiz-box hide">
+        <h2 id="question">What is the answer to this question</h2>
+        <div id="choice-buttons" class="choice-container">
+            <button class="btn">choice 1</button>
+            <button class="btn">choice 2</button>
+            <button class="btn">choice 3</button>
+            <button class="btn">choice 4</button>
+        <div class="result">
+            <p id="result" >Result</p>
+        </div>
+        </div>
+    </div>
+
+    <div id = "end-box" class="end-box hide">
+        <h3>All done!</h3>
+        <p>Your final score is: </p>
+        <p>Enter Initials: </p>
+        <input type="text" id="name" name="name" required minlength="4" maxlength="10" size="12">
+
+        </div>
     </div>
 
 
