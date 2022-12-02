@@ -16,8 +16,6 @@
 
   p {
     margin: 50px;
-    font-family: 'Rajdhani';
-    font-weight: bold;
   }
 
   h1 {
@@ -26,14 +24,18 @@
   }
 
   .home-box {
-    width: 50vw;
+    width: 70vw;
     height: 50vh;
     display: flex;
-    justify-content:flex-start;
-    align-items: center;
+    justify-content:center;
+    align-items:center;
     margin: 0 auto;
     padding: 50px;
     background: white;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../images/scantron.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 
@@ -47,47 +49,39 @@
     align-items: center;
   }
 
-  .hidden {
-    display: none;
-  }
-
   .btn-startQ {
     border: none;
     padding: 10px;
     border-radius: 8px;
-    background-color:darkgray;
+    background-color:rgba(19,41,61,1);
     font-size: 15pt;
     color: white;
     text-decoration: none;
   }
 
   .btn-startQ:hover{
-    background-color:rgba(19,41,61,1);
+    background-color: darkred;
   }
 
 
   .info {
-    font-size: 15pt;
+    font-size: 18pt;
     padding: 20px;
   }
 
   .highScores {
-    font-family: 'Rajdhani';
-    font-weight: bold;
     float:left;
     margin: 50px;
     text-decoration: none;
   }
 
   .time {
-    font-family: 'Rajdhani';
-    font-weight: bold;
     float:right;
   }
 
   /* Quiz CSS */
   .quiz-box {
-    width: 50vw;
+    width: 70vw;
     display: flex;
     justify-content:flex-start;
     align-items:stretch;
@@ -95,6 +89,7 @@
     margin: 0 auto;
     padding: 20px;
     background: white;
+    border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   } 
 
@@ -103,18 +98,25 @@
     gap: 10px;
     margin: 20px 0;
   }
+
+  h2 {
+    font-size: 25pt;
+    font-family: 'Zen Dots';
+
+  }
   
   .btn {
     border: none;
-    background-color: lightgray;
+    background-color: rgba(19,41,61,1);
     border-radius: 8px;
     padding: 5px 10px;
     color: white;
     outline: none;
+    font-size: 20pt;
   }
 
   .btn:hover {
-    background-color:rgba(19,41,61,1);
+    background-color: darkred;
   }
 
   .result {
@@ -137,7 +139,7 @@ p {
 }
 
 .end-box {
-    width: 50vw;
+    width: 70vw;
     display: flex;
     justify-content:flex-start;
     align-items:flex-start;
@@ -145,11 +147,28 @@ p {
     margin: 0 auto;
     padding: 20px;
     background: white;
+    border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   } 
 
-  
-  .hide {
+/* High Score style */
+.high-scores {
+    width: 70vw;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url(../images/highscore.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.hide {
     display: none;
-  }
+}
 

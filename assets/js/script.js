@@ -19,7 +19,7 @@ function startQuiz(){
     setNextQuestion();
 }
 
-
+//array with questions, choices and answers
 var questions = [
     {
         question: "Commonly used data types DO NOT include: ",
@@ -51,20 +51,17 @@ var questions = [
 function setNextQuestion() {
     resetState()
     showQuestion(questions[currentQuestionIndex])
-
 }
 
 function showQuestion(questions){
     questionElement.innerText = questions.question;
-    questions.choices.forEach(choices => {
+    questions.choices.forEach(choice => {
         var button = document.createElement('button')
-        button.innerText = choices
+        button.innerText = choice
         button.classList.add('btn')
-        if (choices === questions.correctAnswer) {
-            button.dataset.correct = choices.correct
-        }
         button.addEventListener('click', selectChoices)
         choicesElement.appendChild(button)
+        clearResult(resultElement);
     })
 }
 
@@ -74,46 +71,25 @@ function resetState() {
     }
 }
 
-function selectChoices(e) {
-    var selectedButton = e.target
-    var correct = selectedButton.dataset.correct
-    setStatus(resultElement, correctAnswer)
-    Array.from(choicesElement.children).forEach(button =>{
-        setStatus(button, button.dataset.correct)
-    })
-    if (questions.length > currentQuestionIndex +1){
-        setNextQuestion()
+function selectChoices() {
+    var userChoice = this.innerText;
+    var correctAnswer = questions[currentQuestionIndex].correctAnswer;
+    if(userChoice === correctAnswer) {
+        console.log("Correct Answer");
+        resultElement.classList.remove('hide');
+        resultElement.innerText = "Correct!";
     } else {
-
+        console.log("Incorrect Answer");
+        resultElement.classList.remove('hide');
+        resultElement.innerText = "Wrong!";
     }
 }
 
-function setStatus(resultElement, correctAnswer) {
-    clearStatus(resultElement)
-    if (correctAnswer) {
-        resultElement.innerText = "Correct!"
-    } else {
-        resultElement.innerText = "Wrong!"
-    }
-}
-
-function clearStatus(element) {
+function clearResult(element) {
     element.classList.add('hide');
 }
 
+
 function startTimer(){
-    timer = setInterval(function (){
-        timerCount--;
-        timerElement.textContent = timerCount;
-        if (timerCount >= 0) {
-            if (isWin && timerCount > 0) {
-                clearInterval(timer);
-                winGame();
-            }
-        }
-        if (timerCount === 0) {
-            clearInterval(timer);
-            loseGame();
-        }
-    }, 1000);
+
 }
