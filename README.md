@@ -3,7 +3,7 @@ Web APIs Challenge: Code Quiz || Fourth homework assignment due 12_5
 
 ## Description
 
-Timed quiz created with HTML, CSS and JavaScript. Each question is worth 11 points. Timer decrements 10 seconds when wrong answer is selected. Option for user to save their score to localStorage and shows all high scores with option to clear all scores. 
+Timed quiz created with HTML, CSS and JavaScript. Each question is worth 11 points. Timer decrements 15 seconds when an incorrect answer is selected. Option for user to save their score to localStorage and shows all high scores with option to clear all scores. 
 
 ## Screenshot
 ![Screenshot of finished product](path)

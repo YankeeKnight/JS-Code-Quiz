@@ -2,19 +2,25 @@
 Still pending:
 
 JS
-1. Moving on to next question
-2. Getting score to add up
-3. Save score and user input to local storage
-4. Show saved score in high score page
-5. Clear high scores
-6. Timer to decrement by 10 seconds for each wrong question
+1. result not rendering unitl the last question is answered
+2. quiz not ending after last question is answered 
+3. when click try again timer runs negative
+4. timer missing from start page
 
 CSS
 1. Start button centered on beginning page
 2. Stop timer decrement from affecting rest of page
-
 */
 
+//time and score
+var timeCountElement = document.getElementById('timecount');
+var timerElement = document.getElementById('timer');
+var timeLeft = 75;
+var userScoreElement = document.getElementById('user-score');
+var questionCount = 0;
+timerElement.textContent = `Time: ${0}s`;
+
+//start, quiz and add score
 var startButton = document.getElementById('btn-begin');
 var homeBoxElement = document.getElementById('home-box');
 var quizBoxElement = document.getElementById('quiz-box');
@@ -22,24 +28,17 @@ var currentQuestionIndex = 0;
 var questionElement = document.getElementById('question');
 var choicesElement = document.getElementById('choice-buttons');
 var resultElement = document.getElementById('result');
-var userScoreElement = document.getElementById('user-score');
-var timeCountElement = document.getElementById('timecount');
-var timerElement = document.getElementById('timer');
-var currentScore = 0;
+var endPageElement = document.getElementById('end-box');
+var initialsInputElement = document.getElementById('name');
+var submitScrBtnElement = document.getElementById('submitScore');
+
+//high scores page
 var viewHighScores = document.getElementById('high-scores');
-var viewhighSoresElement = document.getElementById('high-scoresBox');
-
-viewHighScores.addEventListener("click", function(){
-    startButton.classList.add('hide');
-    homeBoxElement.classList.add('hide');
-    quizBoxElement.classList.add('hide');
-    timeCountElement.classList.add('hide');
-    viewHighScores.classList.add('hide');
-
-    viewhighSoresElement.classList.remove('hide');
-});
-
-startButton.addEventListener('click', startQuiz);
+var viewHighSoresElement = document.getElementById('high-scoresBox');
+var clearScrBtnElement = document.getElementById('clear-scores');
+var scoreListElement = document.getElementById('score-list');
+var tryAgainBtnElement = document.getElementById('againBtn');
+var scoreList = [];
 
 //array with questions, choices and answers
 var questions = [
@@ -70,79 +69,169 @@ var questions = [
     }
     ];
 
+//timer function
+function startTimer(){
+    let timerInterval = setInterval(function (){
+        timeLeft--;
+        timerElement.textContent = `Time: ${timeLeft}s`;
+
+    if(timeLeft === 0 || questionCount === questions.length){
+        clearInterval(timerInterval);
+        quizBoxElement.classList.add('hide');
+        endPageElement.classList.remove('hide');
+        userScoreElement.textContent = timeLeft;
+        }
+    }, 1000);
+
+}
+
+//start quiz with timer and set questions
 function startQuiz(){
-    //for (i = 0; i < questions.length; i++){
     //console.log("Started")
     startButton.classList.add('hide');
     homeBoxElement.classList.add('hide');
     currentQuestionIndex = 0;
     quizBoxElement.classList.remove('hide');
+    //timerElement.classList.remove('hide');
     setNextQuestion();
     startTimer();
-    //}
 }
 
+//reset placeholders on html and replace with questions
 function setNextQuestion() {
+    if (currentQuestionIndex < questions.length){
     resetState()
     showQuestion(questions[currentQuestionIndex])
+    } 
 }
 
+//shows questions
 function showQuestion(questions){
     questionElement.innerText = questions.question;
     questions.choices.forEach(choice => {
         var button = document.createElement('button')
         button.innerText = choice
         button.classList.add('btn')
-        button.addEventListener('click', selectChoices)
         choicesElement.appendChild(button)
+        button.addEventListener('click', selectChoices)
         clearResult(resultElement);
     })
 }
 
+//function to clear result and get ready to receive correct or wrong
+function clearResult(element) {
+    element.classList.add('hide');
+}
+
+//resets placeholder in html.index
 function resetState() {
     while (choicesElement.firstChild) {
         choicesElement.removeChild(choicesElement.firstChild)
     }
 }
 
-function selectChoices(currentScore) {
+//function to check answer and move to next question
+function selectChoices(event) {
+    event.preventDefault();
+
     var userChoice = this.innerText;
+    event.target.value = userChoice;
     var correctAnswer = questions[currentQuestionIndex].correctAnswer;
-    var correctScore = 11;
-    //checks if answer is correct and adds score to local storage
-    //each question is worth 11 points
-    if(userChoice === correctAnswer) {
-        console.log("Correct Answer");
+
+    //checks if answer is correct
+    if(event.target.value === correctAnswer) {
         resultElement.classList.remove('hide');
         resultElement.innerText = "Correct!";
-        currentScore = currentScore + correctScore;
-        console.log(currentScore)   
-    } else {
-        console.log("Incorrect Answer");
+        console.log("Correct Answer");
+          
+    } else if(event.target.value !== correctAnswer){
+        timeLeft = timeLeft - 10;
         resultElement.classList.remove('hide');
         resultElement.innerText = "Wrong!";
+        console.log("Incorrect Answer");
+        
+    } 
+    
+    if (currentQuestionIndex < questions.length) {
+        currentQuestionIndex++;
+    }
+
+    setNextQuestion(); 
+}
+
+//adds score to list and sorts
+function addScore(event){
+    event.preventDefault();
+
+    let init = initialsInputElement.value.toUpperCase();
+    scoreList.push({ initials: init, score: timeLeft });
+
+    scoreList = scoreList.sort((a, b) => {
+        if (a.score < b.score) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
+    scoreListElement.innerHTML="";
+    for (var i = 0; i < scoreList.length; i++){
+        var li = document.createElement("li");
+        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        scoreListElement.append(li);
+    }
+
+    //add to local storage
+    storeScores();
+    displayScores();
+    endPageElement.classList.add('hide');
+    timerElement.classList.add('hide');
+    viewHighScores.classList.add('hide');
+    viewHighSoresElement.classList.remove('hide');
+}
+
+//function to store scores
+function storeScores(){
+    localStorage.setItem("scoreList", JSON.stringify(scoreList));
+}
+
+//function to display scores
+function displayScores(){
+    var storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+
+    if(storedScoreList !== null) {
+        scoreList = storedScoreList;
     }
 }
 
-function clearResult(element) {
-    element.classList.add('hide');
+//function to clear scores
+function clearScores(){
+    localStorage.clear();
+    scoreListElement.innerHTML="";
 }
 
-function saveCurrentScore(){
+//event listeners
+startButton.addEventListener('click', startQuiz);
+submitScrBtnElement.addEventListener('click', addScore);
+clearScrBtnElement.addEventListener('click', clearScores);
+tryAgainBtnElement.addEventListener('click', function(){
+    startButton.classList.remove('hide');
+    homeBoxElement.classList.remove('hide');
+    viewHighScores.classList.remove('hide');
+    viewHighSoresElement.classList.add('hide');
+    timerElement.classList.remove('hide');
+});
 
-}
+//button to access high scores from homepage
+viewHighScores.addEventListener("click", function(){
+    startButton.classList.add('hide');
+    homeBoxElement.classList.add('hide');
+    quizBoxElement.classList.add('hide');
+    timerElement.classList.add('hide');
+    viewHighScores.classList.add('hide');
+    endPageElement.classList.add('hide');
 
-//timer function needs to take off 10 seconds for incorrect answers
-function startTimer(){
-    var timeLeft = 75;
-    setInterval(function(){
-        timeLeft--;
-        if (timeLeft > 1) {
-            timerElement.innerText = timeLeft;
-        } else {
-            timerElement.innerText ="";
-            clearInterval(timeLeft);
-        }
-    }, 1000);
+    viewHighSoresElement.classList.remove('hide');
+});
 
-}
+

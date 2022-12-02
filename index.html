@@ -13,7 +13,7 @@
     <header>
         <div>
             <button id="high-scores" class="highScores btn-startQ">View High Scores</button>
-            <p class="time" id="timecount" >Time: <span id="timer">0</span></p>
+            <p class="time" id="timer"></p>
         </div>
     </header>
 
@@ -44,23 +44,17 @@
         <h3>All done!</h3>
         <p>Your final score is: <span id="user-score">0</span></p>
         <p>Enter Initials: <input type="text" id="name" name="name" required minlength="4" maxlength="10" size="12">
-            <input class="btn-startQ" type="submit" value="Submit" /></p>
+            <input id="submitScore" class="btn-startQ" type="submit" value="Submit" /></p>
 
         </div>
     </div>
 
     <div id="high-scoresBox" class="high-scores hide">
             <h4>High Scores</h4>
-            <div class="score-container">
-                <ol>
-                <li>Number 1</li>
-                <li>Number 1</li>
-                <li>Number 1</li>
-                <li>Number 1</li>
-                </ol>
+            <div id="score-list" class="score-container">
             </div>
             <div>
-                <button class="btn-again again" onclick="window.location.reload();">Try Again</button>
+                <button id="againBtn" class="btn-again again">Try Again</button>
                 <button id="clear-scores" class="btn-again again">Clear High Scores</button>
             </div>
 

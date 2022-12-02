@@ -180,6 +180,7 @@ p {
     color: white;
     outline: none;
     font-size: 20pt;
+    list-style: none;
 }
 
 .score-container ol li {
