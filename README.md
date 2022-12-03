@@ -6,7 +6,7 @@ Web APIs Challenge: Code Quiz || Fourth homework assignment due 12_5
 Timed quiz created with HTML, CSS and JavaScript. Timer decrements 15 seconds when an incorrect answer is selected. Time left on timer equals user's score. Option for user to save their score to localStorage and shows all high scores with option to clear all scores. 
 
 ## Screenshot
-![Screenshot of finished product](path)
+![Screenshot of finished product](./assets/images/screenshot.png)
 
 ## Link to Deployed Application
 
