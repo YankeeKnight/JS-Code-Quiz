@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Permanent+Marker&family=Strait&display=swap');
 
 * {
     box-sizing: border-box;
-    font-family: 'Rajdhani';
+    font-family: 'Strait', sans-serif;
 }
 
 body {
@@ -19,8 +20,9 @@ p {
 }
 
 h1 {
-    font-size: 30pt;
-    font-family: 'Zen Dots';
+    font-size: 40pt;
+    font-family: 'Zen Dots', cursive;
+    text-shadow: 2px 2px 6px white;
 }
 
 .home-box {
@@ -77,6 +79,9 @@ h1 {
 
 .time {
     float: right;
+    font-family: 'Strait', sans-serif;
+    text-shadow: 1px 1px 25px rgba(19, 41, 61, 1);
+
 }
 
 /* Quiz CSS */
@@ -99,8 +104,7 @@ h1 {
 
 h2 {
     font-size: 25pt;
-    font-family: 'Zen Dots';
-
+    font-family: 'Zen Dots', cursive;
 }
 
 .btn {
@@ -129,7 +133,7 @@ h2 {
 /* End screen style */
 h3 {
     font-size: 30pt;
-    font-family: 'Zen Dots';
+    font-family: 'Zen Dots', cursive;
     text-align: center;
 }
 
@@ -187,8 +191,8 @@ p {
 
 .high-scores h4 {
     font-size: 30pt;
-    font-family: 'Zen Dots';
-
+    font-family: 'Permanent Marker', cursive;
+    text-shadow: 2px 2px 6px white;
 }
 
 .btn-again {
@@ -205,6 +209,19 @@ p {
     background-color: darkred;
 }
 
+footer {
+    margin-top: 200px;
+}
+
+footer h3 {
+    font-size: medium;
+    color: rgba(19, 41, 61, 1);
+}
+
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 1183px) {}
+
+@media screen and (max-width: 504px) {}

@@ -16,50 +16,56 @@
         <p class="time" id="timer"></p>
     </header>
 
-    <div id="home-box" class="home-box">
-        <div id="home" class="flex-column flex-center">
-            <h1>Code Quiz</h1>
-            <p class="info" id="info">Try to answer the following code-related questions within the time limit. Keep
-                in mind that incorrect answers will penalize your time by 15 seconds.</p>
-            <button class="btn-startQ" id="btn-begin">Start Quiz</button>
-        </div>
-    </div>
+    <main>
 
-    <div id="quiz-box" class="quiz-box hide">
-        <h2 id="question">What is the answer to this question</h2>
-        <div id="choice-buttons" class="choice-container">
-            <button class="btn">choice 1</button>
-            <button class="btn">choice 2</button>
-            <button class="btn">choice 3</button>
-            <button class="btn">choice 4</button>
-        </div>
-        <div class="result">
-            <p id="result" class="hide">Result</p>
-        </div>
-    </div>
-
-    <div id="end-box" class="end-box hide">
-        <h3>All done!</h3>
-        <p>Your final score is: <span id="user-score">0</span></p>
-        <p>Enter Initials: <input type="text" id="name" name="name" required minlength="4" maxlength="10" size="12">
-            <input id="submitScore" class="btn-startQ" type="submit" value="Submit" />
-        </p>
-
-    </div>
-    </div>
-
-    <div id="high-scoresBox" class="high-scores hide">
-        <h4>High Scores</h4>
-        <div id="score-list" class="score-container">
-        </div>
-        <div>
-            <button id="againBtn" class="btn-again again">Try Again</button>
-            <button id="clear-scores" class="btn-again again">Clear High Scores</button>
+        <div id="home-box" class="home-box">
+            <div id="home" class="flex-column flex-center">
+                <h1>Code Quiz</h1>
+                <p class="info" id="info">Try to answer the following code-related questions within the time limit. Keep
+                    in mind that incorrect answers will penalize your time by 15 seconds.</p>
+                <button class="btn-startQ" id="btn-begin">Start Quiz</button>
+            </div>
         </div>
 
+        <div id="quiz-box" class="quiz-box hide">
+            <h2 id="question">What is the answer to this question</h2>
+            <div id="choice-buttons" class="choice-container">
+                <button class="btn">choice 1</button>
+                <button class="btn">choice 2</button>
+                <button class="btn">choice 3</button>
+                <button class="btn">choice 4</button>
+            </div>
+            <div class="result">
+                <p id="result" class="hide">Result</p>
+            </div>
+        </div>
 
-    </div>
+        <div id="end-box" class="end-box hide">
+            <h3>All done!</h3>
+            <p>Your final score is: <span id="user-score">0</span></p>
+            <p>Enter Initials: <input type="text" id="name" name="name" required minlength="4" maxlength="10" size="12">
+                <input id="submitScore" class="btn-startQ" type="submit" value="Submit" />
+            </p>
 
+        </div>
+        </div>
+
+        <div id="high-scoresBox" class="high-scores hide">
+            <h4>High Scores</h4>
+            <div id="score-list" class="score-container">
+            </div>
+            <div>
+                <button id="againBtn" class="btn-again again">Try Again</button>
+                <button id="clear-scores" class="btn-again again">Clear High Scores</button>
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <h3 id="manny">CODE BY MANNY</h3>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 </body>

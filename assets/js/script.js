@@ -1,3 +1,11 @@
+/* 
+Pending
+1. timer making quiz box resize while ticking
+2. adding numbers infront of quiz choices and high score list
+
+
+*/
+
 //time and score
 var timeCountElement = document.getElementById('timecount');
 var timerElement = document.getElementById('timer');
@@ -17,6 +25,7 @@ var resultElement = document.getElementById('result');
 var endPageElement = document.getElementById('end-box');
 var initialsInputElement = document.getElementById('name');
 var submitScrBtnElement = document.getElementById('submitScore');
+var myFootElement = document.getElementById('manny');
 
 //high scores page
 var viewHighScores = document.getElementById('high-scores');
@@ -77,6 +86,7 @@ function startQuiz() {
     startButton.classList.add('hide');
     homeBoxElement.classList.add('hide');
     currentQuestionIndex = 0;
+    myFootElement.classList.add('hide');
     quizBoxElement.classList.remove('hide');
     clearResult(resultElement);
     setNextQuestion();
@@ -180,6 +190,7 @@ function addScore(event) {
     timerElement.classList.add('hide');
     viewHighScores.classList.add('hide');
     viewHighSoresElement.classList.remove('hide');
+    myFootElement.classList.remove('hide');
 }
 
 //function to store scores
@@ -229,6 +240,7 @@ viewHighScores.addEventListener("click", function () {
     timerElement.classList.add('hide');
     viewHighScores.classList.add('hide');
     endPageElement.classList.add('hide');
+    myFootElement.classList.remove('hide');
 
     displayScores();
 
