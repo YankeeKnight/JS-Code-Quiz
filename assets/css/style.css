@@ -3,130 +3,128 @@
 * {
     box-sizing: border-box;
     font-family: 'Rajdhani';
-  }
-  
-  body {
-    background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 63%);
-  }
+}
 
-  header {
+body {
+    background: linear-gradient(0deg, rgba(19, 41, 61, 1) 0%, rgba(237, 245, 249, 1) 63%);
+}
+
+header {
     height: 100px;
     font-size: 15pt;
-  }
+}
 
-  p {
+p {
     margin: 50px;
-  }
+}
 
-  h1 {
+h1 {
     font-size: 30pt;
     font-family: 'Zen Dots';
-  }
+}
 
-  .home-box {
+.home-box {
     width: 60vw;
     height: 50vh;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 50px;
     background: white;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),url(../images/scantron.jpg);
-    background-size:cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../images/scantron.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 
-  .flex-column {
+.flex-column {
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .flex-center {
+.flex-center {
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .btn-startQ {
+.btn-startQ {
     border: none;
     padding: 10px;
     border-radius: 8px;
-    background-color:rgba(19,41,61,1);
+    background-color: rgba(19, 41, 61, 1);
     font-size: 15pt;
     color: white;
     text-decoration: none;
-  }
+}
 
-  .btn-startQ:hover{
+.btn-startQ:hover {
     background-color: darkred;
-  }
+}
 
 
-  .info {
+.info {
     font-size: 18pt;
     padding: 20px;
-  }
+}
 
-  .highScores {
-    float:left;
+.highScores {
+    float: left;
     margin: 50px;
     text-decoration: none;
-  }
+}
 
-  .time {
-    float:right;
-  }
+.time {
+    float: right;
+}
 
-  /* Quiz CSS */
-  .quiz-box {
-    width: 60vw;
+/* Quiz CSS */
+.quiz-box {
     display: flex;
-    justify-content:flex-start;
-    align-items:stretch;
+    justify-content: flex-start;
+    align-items: stretch;
     flex-direction: column;
-    margin: 0 auto;
     padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  } 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 
-  .choice-container {
+.choice-container {
     display: grid;
     gap: 10px;
     margin: 20px 0;
-  }
+}
 
-  h2 {
+h2 {
     font-size: 25pt;
     font-family: 'Zen Dots';
 
-  }
-  
-  .btn {
+}
+
+.btn {
     border: none;
-    background-color: rgba(19,41,61,1);
+    background-color: rgba(19, 41, 61, 1);
     border-radius: 8px;
     padding: 5px 10px;
     color: white;
     outline: none;
     font-size: 20pt;
-  }
+}
 
-  .btn:hover {
+.btn:hover {
     background-color: darkred;
-  }
+}
 
-  .result {
+.result {
     margin-top: 50px;
-    border-top:  2px solid lightgray;
+    border-top: 2px solid lightgray;
     color: lightgray;
     font-size: 20pt;
-  }
+}
 
-  
+
 
 /* End screen style */
 h3 {
@@ -142,39 +140,39 @@ p {
 .end-box {
     width: 60vw;
     height: 400px;
-    display:block;
+    display: block;
     margin: 0 auto;
     padding: 20px;
     background: white;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url(../images/done.jpg);
-    background-size:cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../images/done.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  } 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
 
 /* High Score style */
 .high-scores {
     width: 60vw;
     display: flex;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     margin: 0 auto;
     padding: 20px;
     background: white;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),url(../images/highscore.jpg);
-    background-size:cover;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(../images/highscore.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .score-container {
     gap: 50px;
     margin: 50px 0;
-    background-color: rgba(19,41,61,1);
+    background-color: rgba(19, 41, 61, 1);
     border-radius: 8px;
     padding: 5px 10px;
     color: white;
@@ -197,17 +195,16 @@ p {
     border: none;
     padding: 10px;
     border-radius: 8px;
-    background-color:rgba(19,41,61,1);
+    background-color: rgba(19, 41, 61, 1);
     font-size: 15pt;
     color: white;
     text-decoration: none;
 }
 
-.btn-again:hover{
+.btn-again:hover {
     background-color: darkred;
 }
 
 .hide {
     display: none;
 }
-
