@@ -230,6 +230,8 @@ tryAgainBtnElement.addEventListener('click', function () {
     viewHighScores.classList.remove('hide');
     viewHighSoresElement.classList.add('hide');
     timerElement.classList.remove('hide');
+    endQuiz();
+    endPageElement.classList.add('hide');
 });
 
 //button to access high scores from homepage

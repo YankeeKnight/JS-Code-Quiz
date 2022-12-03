@@ -10,6 +10,8 @@ Timed quiz created with HTML, CSS and JavaScript. Timer decrements 15 seconds wh
 
 ## Link to Deployed Application
 
+https://yankeeknight.github.io/js-code-quiz-challenge_12-5/
+
 ## Credits
 
 1. "done.jpg" unsplash.com, https://unsplash.com/photos/gI7zgb80QWY 
