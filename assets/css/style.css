@@ -10,6 +10,10 @@ body {
     background: linear-gradient(0deg, rgba(19, 41, 61, 1) 0%, rgba(237, 245, 249, 1) 63%);
 }
 
+main {
+    clear: both;
+}
+
 header {
     height: 100px;
     font-size: 15pt;
@@ -81,15 +85,15 @@ h1 {
     float: right;
     font-family: 'Strait', sans-serif;
     text-shadow: 1px 1px 25px rgba(19, 41, 61, 1);
-
 }
 
 /* Quiz CSS */
 .quiz-box {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: stretch;
     flex-direction: column;
+    width: 60vw;
     padding: 20px;
     background: white;
     border-radius: 10px;

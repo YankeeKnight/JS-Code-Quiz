@@ -1,11 +1,3 @@
-/* 
-Pending
-1. timer making quiz box resize while ticking
-2. adding numbers infront of quiz choices and high score list
-
-
-*/
-
 //time and score
 var timeCountElement = document.getElementById('timecount');
 var timerElement = document.getElementById('timer');
@@ -118,15 +110,18 @@ function showQuestion(questions) {
         clearResult(resultElement);
     }, 5000)
 
+    var count = 1;
     questions.choices.forEach(choice => {
         var button = document.createElement('button')
-        button.innerText = choice
+        var answer = count + ". " + choice;
+        button.innerText = answer;
         button.classList.add('btn')
         choicesElement.appendChild(button)
         button.addEventListener('click', function (event) {
             clearTimeout(resultTimeout);
             selectChoices(event);
         })
+        count++;
     })
 }
 
@@ -208,9 +203,11 @@ function displayScores() {
 
     scoreListElement.innerHTML = "";
     for (var i = 0; i < scoreList.length; i++) {
+        var rank = 1;
         var li = document.createElement("li");
-        li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
+        li.textContent = `${scoreList[i].rank}. ${scoreList[i].initials}: ${scoreList[i].score}`;
         scoreListElement.append(li);
+        rank++;
     }
 }
 
