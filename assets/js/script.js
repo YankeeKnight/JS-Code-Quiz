@@ -96,8 +96,8 @@ function endQuiz() {
 //reset placeholders on html and replace with questions
 function setNextQuestion() {
     if (currentQuestionIndex < questions.length) {
-        resetState()
-        showQuestion(questions[currentQuestionIndex])
+        resetState();
+        showQuestion(questions[currentQuestionIndex]);
     } else {
         endQuiz();
     }
@@ -110,18 +110,15 @@ function showQuestion(questions) {
         clearResult(resultElement);
     }, 5000)
 
-    var count = 1;
     questions.choices.forEach(choice => {
         var button = document.createElement('button')
-        var answer = count + ". " + choice;
-        button.innerText = answer;
+        button.innerText = choice;
         button.classList.add('btn')
         choicesElement.appendChild(button)
         button.addEventListener('click', function (event) {
             clearTimeout(resultTimeout);
             selectChoices(event);
         })
-        count++;
     })
 }
 
@@ -147,13 +144,13 @@ function selectChoices(event) {
     if (event.target.innerText === correctAnswer) {
         resultElement.classList.remove('hide');
         resultElement.innerText = "Correct!";
-        //console.log("Correct Answer");
+        console.log("Correct Answer");
 
     } else {
         timeLeft = timeLeft - 10;
         resultElement.classList.remove('hide');
         resultElement.innerText = "Wrong!";
-        //console.log("Incorrect Answer");
+        console.log("Incorrect Answer");
     }
 
     if (currentQuestionIndex < questions.length) {

@@ -33,6 +33,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 60vw;
     height: 50vh;
     margin: 0 auto;
@@ -43,16 +44,6 @@ h1 {
     background-repeat: no-repeat;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
-    justify-content: center;
-    align-items: center;
 }
 
 .btn-startQ {
@@ -226,7 +217,3 @@ footer h3 {
 .hide {
     display: none;
 }
-
-@media screen and (max-width: 1183px) {}
-
-@media screen and (max-width: 504px) {}
