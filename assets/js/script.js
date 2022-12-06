@@ -203,11 +203,9 @@ function displayScores() {
 
     scoreListElement.innerHTML = "";
     for (var i = 0; i < scoreList.length; i++) {
-        var rank = 1;
         var li = document.createElement("li");
-        li.textContent = `${scoreList[i].rank}. ${scoreList[i].initials}: ${scoreList[i].score}`;
+        li.textContent = `${i + 1}. ${scoreList[i].initials}: ${scoreList[i].score}`;
         scoreListElement.append(li);
-        rank++;
     }
 }
 
