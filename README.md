@@ -1,5 +1,5 @@
 # js-code-quiz-challenge_12-5
-Web APIs Challenge: Code Quiz || Fourth homework assignment due 12_5
+Web APIs Challenge: Code Quiz
 
 ## Description
 
